@@ -10,16 +10,30 @@
     <script src="http://solutions9.3m.com/3MContentRetrievalAPI/BlobServlet?assetId=1180620308103&amp;assetType=MMM_Image&amp;blobAttribute=ImageFile"></script>
 
     <script type="text/javascript">
-        function validateForm() {
-            if ($("#anticodeId").val() == "") {
-                alert("请输入证书编号！");
-            }
-            else {
-                document.forms[0].submit();
-            }
-        }
+//        function validateForm() {
+//            if ($("#anticodeId").val() == "") {
+//                alert("请输入证书编号！");
+//            }
+//            else {
+//                $(".cerBox").css("display","block");
+//                document.forms[0].submit();
+//            }
+//        }
+
+
 
         $(function () {
+
+            $(".buttonPartners").click(function(){
+                if ($("#anticodeId").val() == "") {
+                    alert("请输入证书编号！");
+                }
+                else if($("#anticodeId").val() == "eiZLBY2017120423"){
+                    $(".cerBox").css("display","block");
+//                document.forms[0].submit();
+                }
+            });
+
             var winWidth = document.body.clientWidth
 
             $("td.blankTD").each(function () {
@@ -48,19 +62,19 @@
     <h1>3M授权网店查询</h1>
 
 
-    <div style="text-align: center;">
+    <div  style="text-align: center;">
         <form action="/CPCertificate/webPartners/" id="form1" method="post">
             <table class="tbl">
                 <tbody>
                 <tr>
                     <td align="center">
                         证书编号：&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input name="anticode" id="anticodeId" type="text" size="20">
+                        <input name="anticode" id="anticodeId" type="text" size="20" value="eiZLBY2017120423">
                     </td>
                 </tr>
                 <tr>
                     <td align="center">
-                        <input type="button" onclick="validateForm()" class="buttonPartners" value="提交查询">
+                        <input type="button" class="buttonPartners" value="提交查询">
                         <input type="reset" class="buttonReset" value="重新查询"></td>
                 </tr>
 
@@ -69,18 +83,13 @@
 
         </form>
     </div>
-    <div style="min-height: 160px">
-
-
-        <table class="tbl">
-
-
+    <div  style="min-height: 160px;">
+        <table class="tbl cerBox" style="display: none;">
             <tbody>
             <tr>
-                <td class="blankTD" width="30%">&nbsp;</td>
-
+                <td class="blankTD" width="28%">&nbsp;</td>
                 <td align="left">
-                    <font style="font-size: 16px;"><b>兹授权 <u>上海车泓实业有限公司</u>
+                    <font style="font-size: 16px;"><b>兹授权 <u>上海奋振贸易有限公司</u>
                         为 <u>汽车隔音降噪产品</u> 产品在中国大陆地区下述互联网络销售店的销售商</b></font>
                     <br> <br>
                     <b>
@@ -90,7 +99,7 @@
 
                         <font style="font-size: 14px;">
                             网店名称： 奋振车品专营店<br><br>
-                            网店网址： https://jiapeiqcpj.tmall.com<br><br>
+                            网店网址： https://fenzhencp.tmall.com<br><br>
                         </font>
                         <font style="font-size: 14px;">
                             授权期限：2017-12-05 至 2018-12-05<br><br>
@@ -99,18 +108,13 @@
                     </b>
                 </td>
 
-                <td class="blankTD" width="30%">&nbsp;</td>
+                <td class="blankTD" width="28%"></td>
             </tr>
-
-
             </tbody>
         </table>
-
-
         <br>
         <br>
     </div>
-
     <table class="tblFoot">
         <tbody>
         <tr>
@@ -125,8 +129,6 @@
         </tr>
         </tbody>
     </table>
-
 </div>
-
 </body>
 </html>
